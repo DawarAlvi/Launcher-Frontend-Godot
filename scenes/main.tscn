@@ -1,0 +1,281 @@
+[gd_scene load_steps=10 format=3 uid="uid://bc3pq6n4blv8j"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_53ldj"]
+[ext_resource type="PackedScene" uid="uid://ciayleafji314" path="res://prefabs/app_tile.tscn" id="2_sk7yn"]
+[ext_resource type="Texture2D" uid="uid://pwc88n8wxr4f" path="res://img/ps_buttons/T_P4_Triangle_Color_Alt.png" id="3_prsft"]
+[ext_resource type="Texture2D" uid="uid://dwi72jdamtm22" path="res://img/ps_buttons/T_P4_Cross_Color_Alt.png" id="4_ih8t8"]
+[ext_resource type="Texture2D" uid="uid://b3urssdbg2akk" path="res://img/ps_buttons/T_X_X_Alt.png" id="4_v7alw"]
+[ext_resource type="Texture2D" uid="uid://dnknjpx27bmor" path="res://img/ps_buttons/T_P4_L1_Alt.png" id="5_s12km"]
+[ext_resource type="Texture2D" uid="uid://7efb8kh3yan0" path="res://img/ps_buttons/T_P4_R1_Alt.png" id="6_6iyqp"]
+
+[sub_resource type="Gradient" id="Gradient_fcnty"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.105882, 0.105882, 0.105882, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4pdel"]
+gradient = SubResource("Gradient_fcnty")
+width = 10
+height = 40
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_53ldj")
+tilePrefab = ExtResource("2_sk7yn")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 40.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+columns = 4
+
+[node name="BTN_exit" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -102.0
+offset_top = -50.0
+offset_right = -19.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+texture_hover = SubResource("GradientTexture2D_4pdel")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="Text" type="RichTextLabel" parent="BTN_exit"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -11.5
+offset_right = 77.0
+offset_bottom = 11.5
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]EXIT"
+fit_content = true
+
+[node name="Icon" type="TextureRect" parent="BTN_exit"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 37.0
+offset_bottom = -3.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_prsft")
+expand_mode = 1
+
+[node name="BTN_config" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -219.0
+offset_top = -50.0
+offset_right = -108.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+texture_hover = SubResource("GradientTexture2D_4pdel")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="Text" type="RichTextLabel" parent="BTN_config"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -11.0
+offset_right = 104.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]CONFIG"
+fit_content = true
+
+[node name="Icon" type="TextureRect" parent="BTN_config"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 37.0
+offset_bottom = -3.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_v7alw")
+expand_mode = 1
+
+[node name="BTN_select" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -50.0
+offset_right = 125.0
+offset_bottom = -10.0
+grow_vertical = 0
+focus_mode = 0
+texture_hover = SubResource("GradientTexture2D_4pdel")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="Text" type="RichTextLabel" parent="BTN_select"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -11.5
+offset_right = 100.0
+offset_bottom = 11.5
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]SELECT"
+fit_content = true
+
+[node name="Icon" type="TextureRect" parent="BTN_select"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 37.0
+offset_bottom = -3.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_ih8t8")
+expand_mode = 1
+
+[node name="BTN_prev" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 135.0
+offset_top = -50.0
+offset_right = 223.0
+offset_bottom = -10.0
+grow_vertical = 0
+focus_mode = 0
+texture_hover = SubResource("GradientTexture2D_4pdel")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="Text" type="RichTextLabel" parent="BTN_prev"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -11.0
+offset_right = 83.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]PREV"
+fit_content = true
+
+[node name="Icon" type="TextureRect" parent="BTN_prev"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 37.0
+offset_bottom = -3.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_s12km")
+expand_mode = 1
+
+[node name="BTN_next" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 229.0
+offset_top = -50.0
+offset_right = 317.0
+offset_bottom = -10.0
+grow_vertical = 0
+focus_mode = 0
+texture_hover = SubResource("GradientTexture2D_4pdel")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="Text" type="RichTextLabel" parent="BTN_next"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -11.0
+offset_right = 83.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]NEXT"
+fit_content = true
+
+[node name="Icon" type="TextureRect" parent="BTN_next"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 37.0
+offset_bottom = -3.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_6iyqp")
+expand_mode = 1
+
+[connection signal="pressed" from="BTN_exit" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="BTN_config" to="." method="_on_btn_config_pressed"]
+[connection signal="pressed" from="BTN_select" to="." method="_on_select_button_pressed"]
+[connection signal="pressed" from="BTN_prev" to="." method="_on_prev_button_pressed"]
+[connection signal="pressed" from="BTN_next" to="." method="_on_next_button_pressed"]
